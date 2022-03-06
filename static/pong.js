@@ -40,10 +40,13 @@ function update_game(dict) {
     const left = document.getElementById("left");
     const right = document.getElementById("right");
     const ball = document.getElementById("ball");
+    const score_div = document.getElementById("score-div");
 
     left.style.top = `${dict.left}px`;
     right.style.top = `${dict.right}px`;
     ball.style.top = `${dict.bally}px`;
     ball.style.left = `${dict.ballx}px`;
+    score_div.innerHTML = `${dict.score}`;
+
 
 }

@@ -18,6 +18,7 @@ class PongGame:
             "right": self.right.position,
             "ballx": self.ball.x,
             "bally": self.ball.y,
+            "score": f"{self.left.score} - {self.right.score}",
         }
         j = json.dumps(game_dict)
         return j
@@ -31,15 +32,15 @@ class PongGame:
     def advance_frame(self):
         # Move the left player
         if self.left.direction == "up":
-            self.left.position -= 5
+            self.left.position -= 15
         elif self.left.direction == "down":
-            self.left.position += 5
+            self.left.position += 15
 
         # Right player
         if self.right.direction == "up":
-            self.right.position -= 5
+            self.right.position -= 15
         elif self.right.direction == "down":
-            self.right.position += 5
+            self.right.position += 15
 
         # Move the ball
         self.ball.x += self.ball.x_velocity
@@ -72,3 +73,7 @@ class PongGame:
         # Hits right player
         if self.right.position < self.ball.y < self.right.position + 150 + self.ball.height and self.ball.x + self.ball.width / 2 >= self.width - self.ball.width:
             self.ball.x_velocity *= -1
+
+        # bot mode
+        # self.left.position = self.ball.y - 75
+        self.right.position = self.ball.y - 75

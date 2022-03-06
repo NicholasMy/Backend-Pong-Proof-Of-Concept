@@ -4,5 +4,5 @@ class PongBall:
         self.width = 40
         self.x = 380
         self.y = 0
-        self.x_velocity = -3
-        self.y_velocity = 3
+        self.x_velocity = -10
+        self.y_velocity = 10
