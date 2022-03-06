@@ -1,0 +1,35 @@
+.game-container {
+    margin: 0 auto;
+    width: 800px;
+    height: 600px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.paddle {
+    width: 25px;
+    height: 150px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+}
+
+#left {
+    z-index: 0;
+}
+
+#right {
+    z-index: 1;
+    left: 775px;
+    top: 0;
+}
+
+.ball {
+    height: 40px;
+    width: 40px;
+    background-color: blue;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
